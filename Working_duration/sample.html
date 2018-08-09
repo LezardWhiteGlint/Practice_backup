@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head><title>
+	考勤系统
+</title></head>
+<body>
+    <form name="login_form" method="post" action="default.aspx" id="login_form">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E8589EA3" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWDwKHn9CyCAKbzr7wBALhkrW/DAKbzqrYDQKxzsrYDQL/ksHADAKr4dPRAgKNxL/5CAKZr929DgL/+s74BgLWwujhCwLWwqTzBQLbgpvECwKct4xRAs6Wg6kKo8QqcO1qrlt5HQi/cDC316jZC/0=" />
+</div>
+        <div style="width:100%;text-align:center">
+            <table cellspacing="0" cellpadding="0" border="0">
+				<!--DWLayoutTable-->
+				<tbody>
+					<tr>
+						<td><img height="35" src="IMAGES/ul.gif" width="25" alt="" /></td>
+						<td align="right" style="background-image: url(IMAGES/um.gif);"></td>
+						<td><img height="35" src="IMAGES/ur.gif" width="25" alt="" /></td>
+					</tr>
+					<tr>
+						<td style="background-image: url(IMAGES/l.gif);"></td>
+						<td>
+						    <table width="450" border="0">
+								<tr>
+									<td>
+    									<table border="0" style="width: 440px">
+                                            <tr>
+                                                <td colspan="3" align="center"><b>考勤测试</b></td>
+                                            </tr>
+                                            <tr align="left">
+                                                <td>
+                                                    <span id="Label1">Work NO.</span></td>
+                                                <td>
+                                                    <input name="txt_num" type="text" id="txt_num" style="width:232px;" /></td>
+                                                
+                                                <td>
+                                                    <input type="submit" name="btn_OK" value="OK" id="btn_OK" style="width:96px;" /></td>
+                                            </tr>
+                                            <tr align="left">
+                                                <td>
+                                                    <span id="Label2">Name</span></td>
+                                                <td>
+                                                    <input name="txt_name" type="text" id="txt_name" disabled="disabled" style="width:232px;" /></td>
+                                            </tr>
+                                            <tr align="left">
+                                                <td>
+                                                    <span id="Label3">Time</span></td>
+                                                <td colspan="2">
+                                                    <input name="txt_time" type="text" value="张晋轩  2018/7/13 9:22:05  Check In" id="txt_time" disabled="disabled" style="width:352px;" /></td>
+                                            </tr>
+                                        </table>
+                                        <table>
+                                            <tr>
+                                                <td style="height: 26px">
+                                                    <input type="submit" name="btn_in" value="Check In" id="btn_in" style="border-style:Groove;" /></td>
+                                                <td style="height: 26px">
+                                                    <input type="submit" name="btn_out" value="Check Out" id="btn_out" style="border-style:Groove;" /></td>
+                                                <td style="height: 26px">
+                                                    <input type="submit" name="btn_overin" value="OverTime Start" id="btn_overin" style="border-style:Groove;" /></td>
+                                                <td style="height: 26px">
+                                                    <input type="submit" name="btn_overout" value="OverTime End" id="btn_overout" style="border-style:Groove;" /></td>
+                                            </tr>
+                                        </table>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td style="background-image: url(IMAGES/r.gif);"></td>
+					</tr>
+					<tr>
+						<td><img height="11" src="images/bl.gif" width="25" alt="" /></td>
+						<td style="background-image: url(IMAGES/bm.gif);"></td>
+						<td><img height="11" src="IMAGES/br.gif" width="25" alt="" /></td>
+					</tr>
+				</tbody>
+		    </table>
+            <br />
+        <table border="1" style="border-right: black 1px ridge; border-top: black 1px ridge; border-left: black 1px ridge; border-bottom: black 1px ridge;">
+            <tr><td colspan="2"><b>查询历史纪录</b></td></tr>
+            <tr align="left">
+                <td style="width: 423px" colspan="2">
+                    <span id="Label4">编号</span>
+                    <input name="txt_id" type="text" value="a1049" id="txt_id" /></td>
+            </tr>
+            <tr>
+                <td style="width: 109px">
+                开始日期&nbsp;
+                    <input name="CodefanCalendar1" type="text" value="2018-07-02" id="CodefanCalendar1" style="border-color:Black;border-width:1px;border-style:Solid;" /><span><input type="button" id="ButtonCodefanCalendar1" value="..." onclick="document.getElementById('CodefanCalendar1_Calendar').style.display='block';" style="border:1pt solid black;height:20px;" /></span><iframe id="CodefanCalendar1_Calendar" src="/kaoqin/Codefan-Controls/Calendar/calendar.htm?CodefanCalendar1" scrolling='no' onclick="alert('aaaaaaaaaa');" frameborder='0' style='position:absolute;border:0;display:none;width:274px;height:205px;border:1px solid #000;'></iframe></td>
+                <td style="width: 127px">
+                结束日期
+                    <input name="CodefanCalendar2" type="text" value="2018-07-31" id="CodefanCalendar2" style="border-color:Black;border-width:1px;border-style:Solid;" /><span><input type="button" id="ButtonCodefanCalendar2" value="..." onclick="document.getElementById('CodefanCalendar2_Calendar').style.display='block';" style="border:1pt solid black;height:20px;" /></span><iframe id="CodefanCalendar2_Calendar" src="/kaoqin/Codefan-Controls/Calendar/calendar.htm?CodefanCalendar2" scrolling='no' onclick="alert('aaaaaaaaaa');" frameborder='0' style='position:absolute;border:0;display:none;width:274px;height:205px;border:1px solid #000;'></iframe></td>
+            </tr>
+            <tr>
+                <td style="width: 423px" colspan="2">
+                    <input type="submit" name="view" value="查看全部" id="view" style="border-style:Groove;width:128px;" />
+                    <input type="submit" name="btnLate" value="查看迟到" id="btnLate" style="border-style:Groove;width:128px;" />
+                    <input type="submit" name="btnForget" value="查看漏打" id="btnForget" style="border-style:Groove;width:128px;" /></td>
+            </tr>
+            <tr>
+                <td style="width: 423px" colspan="2" align="left">
+                    <div>
+	<table cellspacing="0" rules="all" border="1" id="GridView1" style="border-style:Outset;font-size:Small;width:416px;border-collapse:collapse;">
+		<tr>
+			<th scope="col">姓名</th><th scope="col">时间</th><th scope="col">星期</th><th scope="col">状态</th>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/2 18:44:31</td><td>Monday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/3 9:21:17</td><td>Tuesday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/3 9:21:19</td><td>Tuesday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/3 18:24:56</td><td>Tuesday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/4 8:51:59</td><td>Wednesday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/4 18:23:00</td><td>Wednesday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/5 9:16:47</td><td>Thursday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/5 18:20:23</td><td>Thursday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/6 8:39:13</td><td>Friday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/6 17:41:16</td><td>Friday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/9 7:49:54</td><td>Monday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/9 19:05:12</td><td>Monday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/10 8:32:06</td><td>Tuesday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/10 8:32:08</td><td>Tuesday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/10 18:24:58</td><td>Tuesday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/11 8:35:55</td><td>Wednesday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/11 17:46:29</td><td>Wednesday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/12 8:49:50</td><td>Thursday</td><td>Check In</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/12 17:33:42</td><td>Thursday</td><td>Check Out</td>
+		</tr><tr style="height:20px;">
+			<td>张晋轩</td><td>2018/7/13 9:22:05</td><td>Friday</td><td>Check In</td>
+		</tr>
+	</table>
+</div>
+                </td>
+            </tr>
+        </table>
+	    </div>
+    </form>
+</body>
+</html>
