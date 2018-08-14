@@ -39,6 +39,29 @@ def inputcontent(language):
     alert.accept()
 
 
+# activate the annoucements
+def activate(lang_list,plus_days):
+    from datetime import date,timedelta
+    driver.get('http://54.173.233.19/announcement/www/index.php/announcement/www/index.php?mod=Data&do=selectNotices&game=hwgj&selectArea=r2&selectLang='+str(lang_list))
+    today = date.today()
+    check_date = today+timedelta(days=plus_days)
+    i = 1
+    while True:
+        date = driver.find_element_by_xpath('//*[@id="sample-table-2"]/tbody/tr['+str(i)+']/td[4]')
+        date = date.text.split('_')[3]
+        if date > str(check_date):
+            print(date+' is activated for' + lang_list + ' language.')
+            active_button = driver.find_element_by_xpath('//*[@id="sample-table-2"]/tbody/tr['+str(i)+']/td[5]/div[1]/a[1]')
+            active_button.click()
+            alert = driver.switch_to_alert()
+            alert.accept()
+            alert = driver.switch_to_alert()
+            alert.accept()
+            break
+        else:
+            i += 1
+            
+
 #get annoucement content
 annoucement = []
 f = io.open('test.txt','r',encoding='utf-16-le')
@@ -115,4 +138,9 @@ inputcontent(Russian)
 navi(10) #Thai
 inputcontent(Thai)
 
+# activate the annoucements
+
+lang_list = ['English','French','German','Spanish','Portu','Russian','Thai']
+for lang in lang_list:
+    activate(lang,4)
 
