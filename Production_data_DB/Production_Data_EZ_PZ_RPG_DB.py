@@ -1,5 +1,6 @@
 from Web_scrapper import login_xpath as login
 from Web_scrapper import normal_mode
+from Web_scrapper import headless_mode
 from datetime import date,timedelta
 import time
 from selenium.common.exceptions import NoSuchElementException
@@ -80,7 +81,7 @@ def main():
     login_xpath = '//*[@id="submit-btn"]'
     account_content = '10024'
     password_content = 'yyy666'
-    driver = normal_mode()
+    driver = headless_mode()
     login(driver,url,account_xpath,password_xpath,login_xpath,account_content,password_content)
     while True:
         start_date_real = start_date + timedelta(days=1)
