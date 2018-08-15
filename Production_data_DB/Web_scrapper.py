@@ -6,11 +6,10 @@ import os
 
 #start headless mode,return driver for use
 def headless_mode():
-    options = webdriver.ChromeOptions()
-    options.add_argument('headless')
-    options.add_argument('window-size=800x600')
-    driver_path = os.getcwd()+'/chromedriver'
-    driver = webdriver.Chrome(executable_path = driver_path,chrome_options=options)
+    options = webdriver.firefox.options.Options()
+    options.add_argument('--headless')
+    driver_path = os.getcwd()+'/geckodriver'
+    driver = webdriver.Firefox(executable_path = driver_path,firefox_options=options)
     return driver
 
 #start normal mode,return driver for use    
@@ -31,4 +30,5 @@ def login_xpath(driver,url,account_xpath,password_xpath,login_xpath,account_cont
         login[0].click()
     else:
         login.click()
-    
+
+driver = headless_mode()    
