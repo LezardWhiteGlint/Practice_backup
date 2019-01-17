@@ -1,5 +1,6 @@
 from Web_scrapper import login
 from Web_scrapper import normal_mode
+from Web_scrapper import headless_mode
 from datetime import date,timedelta
 import time
 from selenium.common.exceptions import NoSuchElementException
@@ -28,6 +29,7 @@ def info_getter(driver,date):
                      'arppu' : float(arppu.text),
                      'date' : date.isoformat() }
             Collection.insert_one(post)
+            print(str(date)+' data inserted')
             i += 1
         except NoSuchElementException:
             break
@@ -48,8 +50,8 @@ def page_navi(driver,sleep_time,start_date,end_date):
 def main():
     #set parameters
     sleep_time = 0.5
-    start_date = date(2017,2,14)
-    end_date = date(2018,8,6)
+    start_date = date(2018,10,17)
+    end_date = date(2018,10,28)
 
     #login and initiate
     url = 'http://acc.r2games.com/main/?r=site/login'
@@ -58,7 +60,7 @@ def main():
     login_xpath = '//*[@id="submit-btn"]'
     account_content = '10024'
     password_content = 'yyy666'
-    driver = normal_mode()
+    driver = headless_mode()
     login(driver,url,account_xpath,password_xpath,login_xpath,account_content,password_content)
     #navigate and get info
     page_navi(driver,sleep_time,start_date,end_date)

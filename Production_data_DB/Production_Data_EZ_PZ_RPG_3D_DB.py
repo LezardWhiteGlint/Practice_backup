@@ -54,7 +54,7 @@ def main():
     client = MongoClient()
     DB = client.Mobile_revenue
     Collection = DB.EZ_PZ_RPG_3D
-    '''Collection =MongoClient().Mobile_revenue.EZ_PZ_RPG_3D_test7'''
+    '''Collection =MongoClient().Mobile_revenue.EZ_PZ_RPG_3D'''
     Collection.create_index([('date',pymongo.ASCENDING)],unique = True)
     sleep_time = 0.5
     start_date = date(2018,1,27)
@@ -80,5 +80,34 @@ def main():
             driver.quit()
             break
 
-if __name__ = '__main__':
-    main()
+
+def update():
+    client = MongoClient()
+    DB = client.Mobile_revenue
+    Collection = DB.EZ_PZ_RPG_3D
+    Collection.create_index([('date',pymongo.ASCENDING)],unique = True)
+    sleep_time = 0.5
+    last_date = Collection.find().distinct('date')[-1]
+    last_date = last_date.split('-')
+    last_date = date(int(last_date[0]),int(last_date[1]),int(last_date[2]))
+    start_date = last_date+timedelta(days=1)
+    end_date = date.today()-timedelta(days=1)
+    days_intervel = 31
+
+    url = 'http://acc.r2games.com/main/?r=site/login'
+    account_xpath = '//*[@id="login-form"]/dl/dd[1]/input'
+    password_xpath = '//*[@id="login-form"]/dl/dd[2]/input'
+    login_xpath = '//*[@id="submit-btn"]'
+    account_content = '10024'
+    password_content = 'yyy666'
+    driver = headless_mode()
+    login(driver,url,account_xpath,password_xpath,login_xpath,account_content,password_content)
+    for something in range(10):
+        start_date_real = start_date
+        page_navi(Collection,driver,sleep_time,start_date_real,end_date)
+        if start_date > date.today():
+            driver.quit()
+            break
+
+if __name__ == '__main__':
+    update()

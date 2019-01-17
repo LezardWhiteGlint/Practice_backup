@@ -68,12 +68,12 @@ def main():
     # database name and parameters
     client = MongoClient()
     DB = client.Housing_price
-    Collection = DB.Residence_level_3_and_4
-    # Collection = MongoClient().Housing_price.Residence_level_3_4
-    city_level = [3,4]
+    Collection = DB.Residence
+    # Collection = MongoClient().Housing_price.Residence
+    city_level = [1,2]
     sleep_time = 0.01
-    start_date = date(2007,1,1)
-    end_date = date(2018,7,1)
+    start_date = date(2018,9,1)
+    end_date = date(2018,9,1)
     driver = normal_mode()
     for citylevel in city_level:
         page_navi(Collection,citylevel,driver,sleep_time,start_date,end_date)

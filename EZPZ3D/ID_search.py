@@ -24,7 +24,7 @@ def query(district,char_name):
     character.send_keys(char_name)
     query.click()
     time.sleep(1)
-    uid = driver.find_element_by_xpath('//*[@id="heroUUID"]')
+    uid = driver.find_element_by_xpath('//*[@id="loginName"]')
     result = uid.get_attribute('value')
     return result
 

@@ -49,6 +49,25 @@ def initialize(start_date,driver):
     else:
         initialize(start_date,driver)            
 
+
+def this_month_initialize(start_date,driver):
+    panel = WebDriverWait(driver,10).until(
+        EC.presence_of_element_located((By.XPATH, '//*[@id="start_date2"]')))
+    panel.click()
+    r = 1
+    c = 1
+    for i in range(14):
+        date = driver.find_element_by_xpath('/html/body/div[14]/div[3]/table/tbody/tr['+str(r)+']/td['+str(c)+']')
+        if date.text == str(start_date.day):
+            date.click()
+            break
+        if c == 7:
+            r = 2
+            c = 1
+        else:
+            c +=1
+
+
 def next_day(current_date,driver):
     try:
         nextday = current_date + timedelta(days=1)
@@ -136,10 +155,10 @@ def main():
     DB = client.China_stock
     Collection = DB.Shanghai_stock
     Collection.create_index([('date',pymongo.ASCENDING)],unique = True)
-    start_date = date(2000,1,1)
+    start_date = date(2018,8,11)
 
-    driver = headless_mode()
-    #driver = normal_mode()
+    #driver = headless_mode()
+    driver = normal_mode()
     login(driver)
     print('Going back to start date')
     initialize(start_date,driver)
@@ -150,9 +169,32 @@ def main():
         time.sleep(0.1)
         info_getter(Collection,driver,current_date)
         current_date = next_day(current_date,driver)
-        if current_date == date(2018,8,10):
+        if current_date == date(2018,8,20):
             break
     
+def current_month_update():
+    '''change parameters in main function'''
+    client = MongoClient()
+    DB = client.China_stock
+    Collection = DB.Shanghai_stock
+    Collection.create_index([('date',pymongo.ASCENDING)],unique = True)
+    start_date = date(2018,8,11)
 
+    #driver = headless_mode()
+    driver = normal_mode()
+    login(driver)
+    this_month_initialize(start_date,driver)
+    current_date = start_date
+    while True:
+        query_button = driver.find_element_by_xpath('//*[@id="btnQuery"]')
+        query_button.click()
+        time.sleep(0.1)
+        info_getter(Collection,driver,current_date)
+        current_date = next_day(current_date,driver)
+        if current_date == date(2018,8,20):
+            break
+
+    
 if __name__ == "__main__":
-    main()
+    #main()
+    current_month_update()

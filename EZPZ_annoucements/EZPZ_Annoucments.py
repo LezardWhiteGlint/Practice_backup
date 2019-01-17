@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import os
 import time
 import io
@@ -19,10 +23,14 @@ def login():
 #Navigate to the input page
 def navi(lang):
     driver.get('http://54.173.233.19/announcement/www/index.php/announcement/www/index.php?mod=Announce&do=add')
-    area = driver.find_element_by_xpath('//*[@id="selectArea"]/option[2]')
+    #area = driver.find_element_by_xpath('//*[@id="selectArea"]/option[2]')
+    area = WebDriverWait(driver,10).until(
+        EC.presence_of_element_located((By.XPATH, '//*[@id="selectArea"]/option[2]')))
     area.click()
     time.sleep(1)
-    lang = driver.find_element_by_xpath('//*[@id="selectLang"]/option['+str(lang)+']')
+    #lang = driver.find_element_by_xpath('//*[@id="selectLang"]/option['+str(lang)+']')
+    lang = WebDriverWait(driver,10).until(
+        EC.presence_of_element_located((By.XPATH, '//*[@id="selectLang"]/option['+str(lang)+']')))
     lang.click()
 
 #input content
@@ -47,6 +55,7 @@ def activate(lang_list,plus_days):
     check_date = today+timedelta(days=plus_days)
     i = 1
     while True:
+        time.sleep(1)
         date = driver.find_element_by_xpath('//*[@id="sample-table-2"]/tbody/tr['+str(i)+']/td[4]')
         date = date.text.split('_')[3]
         if date > str(check_date):
@@ -60,7 +69,19 @@ def activate(lang_list,plus_days):
             break
         else:
             i += 1
-            
+
+def delete_old(lang_list):
+    driver.get('http://54.173.233.19/announcement/www/index.php/announcement/www/index.php?mod=Data&do=selectNotices&game=hwgj&selectArea=r2&selectLang='+str(lang_list))
+    time.sleep(0.5)
+    try:
+        while True:
+            delete = driver.find_element_by_xpath('//*[@id="sample-table-2"]/tbody/tr[1]/td[5]/div[1]/a[3]')
+            delete.click()
+            alert = driver.switch_to_alert()
+            alert.accept()
+    except NoSuchElementException:
+        pass
+    
 
 #get annoucement content
 annoucement = []
@@ -120,9 +141,11 @@ for ele in annoucement[ThaiIndex+1:]:
 
 
 
-
+lang_list = ['English','French','German','Spanish','Portu','Russian','Thai']
 
 login()
+for lang in lang_list:
+    delete_old(lang)
 navi(2) #english
 inputcontent(English)
 navi(3) #french
@@ -139,8 +162,7 @@ navi(10) #Thai
 inputcontent(Thai)
 
 # activate the annoucements
-
-lang_list = ['English','French','German','Spanish','Portu','Russian','Thai']
 for lang in lang_list:
-    activate(lang,4)
+    activate(lang,0)
 
+driver.quit()
