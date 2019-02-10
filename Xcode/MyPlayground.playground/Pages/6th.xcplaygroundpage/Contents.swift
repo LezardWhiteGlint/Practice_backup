@@ -45,5 +45,3 @@ Htest.numberOfWheels
 var optionalTest = true
 let TestDisplay = optionalTest ? 123123 : 321321
 !true
-
-
