@@ -124,3 +124,5 @@ class Game{
         
     }
 }
+//let isInt = "sdf"
+//isInt is Int
