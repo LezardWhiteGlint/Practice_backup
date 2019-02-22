@@ -18,3 +18,26 @@ class Cost {
 }
 
 let cost = Cost(date: "", category: nil, amount: 0.0, reminder: nil)
+Double("string")
+
+class setGetTest {
+    var input:Int
+    var test:Int {
+        set(value) {
+            input = value * 10
+            print("You are setting the var")
+        }
+        get {
+            print("You are getting the var")
+            return input/10
+        }
+    }
+    init(input:Int) {
+        self.input = input
+    }
+}
+
+let setGet = setGetTest(input: 10)
+setGet.input
+setGet.test
+setGet.test = 10
