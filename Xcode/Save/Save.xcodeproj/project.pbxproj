@@ -15,6 +15,8 @@
 		F93ACF7E2219487B005DBAFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93ACF7C2219487B005DBAFD /* LaunchScreen.storyboard */; };
 		F93ACF892219487B005DBAFD /* SaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93ACF882219487B005DBAFD /* SaveTests.swift */; };
 		F93ACF942219487B005DBAFD /* SaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93ACF932219487B005DBAFD /* SaveUITests.swift */; };
+		F99DB8C42221417F0082F141 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8C32221417F0082F141 /* TestTableViewController.swift */; };
+		F99DB8C6222141B20082F141 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8C5222141B20082F141 /* TestTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		F93ACF8F2219487B005DBAFD /* SaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93ACF932219487B005DBAFD /* SaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUITests.swift; sourceTree = "<group>"; };
 		F93ACF952219487B005DBAFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F99DB8C32221417F0082F141 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		F99DB8C5222141B20082F141 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				F93ACF7022194876005DBAFD /* AppDelegate.swift */,
 				F93ACF7222194876005DBAFD /* ViewController.swift */,
 				F93ACF7422194876005DBAFD /* Main.storyboard */,
+				F99DB8C5222141B20082F141 /* TestTableViewCell.swift */,
+				F99DB8C32221417F0082F141 /* TestTableViewController.swift */,
 				F93ACF7A2219487B005DBAFD /* Assets.xcassets */,
 				F93ACF7C2219487B005DBAFD /* LaunchScreen.storyboard */,
 				F93ACF7F2219487B005DBAFD /* Info.plist */,
@@ -262,6 +268,8 @@
 				F93ACF7322194876005DBAFD /* ViewController.swift in Sources */,
 				F93ACF7122194876005DBAFD /* AppDelegate.swift in Sources */,
 				F93ACF7922194876005DBAFD /* Save.xcdatamodeld in Sources */,
+				F99DB8C42221417F0082F141 /* TestTableViewController.swift in Sources */,
+				F99DB8C6222141B20082F141 /* TestTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
