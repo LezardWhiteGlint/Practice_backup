@@ -1,3 +1,5 @@
+import UIKit
+
 class ClassStaticTest {
     var test:Int
     func testSet() -> Int {
@@ -27,3 +29,8 @@ func closureTest() -> Int
     return closure
 }
 closureTest()
+
+
+
+
+
