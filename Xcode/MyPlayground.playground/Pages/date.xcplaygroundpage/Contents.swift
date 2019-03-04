@@ -18,6 +18,8 @@ private func queryDateCheck(selectedDate:Date, toCheckDate:Date) -> Bool {
 
 queryDateCheck(selectedDate: date1, toCheckDate: date2)
 
-var amount = 2.2		
+var amount = 2.2
 amount = 4
+
+date1.description(with: Locale.current)
 
